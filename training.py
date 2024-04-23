@@ -3,16 +3,12 @@ from transformers import BertTokenizer, BertForSequenceClassification, TrainingA
 import numpy as np
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
-# Load dataset
+# Load Spam Dataset
 dataset = load_dataset("sms_spam")
 train_test_split = dataset['train'].train_test_split(test_size=0.2)
 
-# Initialize tokenizer
+# Tokenize BERT Model
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-
-# Tokenization function
-
-
 def tokenize_function(examples):
     return tokenizer(examples['sms'], padding="max_length", truncation=True, max_length=128)
 
@@ -37,9 +33,7 @@ training_args = TrainingArguments(
     evaluation_strategy="epoch"
 )
 
-# Function to compute evaluation metrics
-
-
+# Compute evaluation metrics
 def compute_metrics(pred):
     labels = pred.label_ids
     preds = pred.predictions.argmax(-1)
@@ -63,11 +57,7 @@ trainer = Trainer(
     compute_metrics=compute_metrics
 )
 
-# Train the model
+
+# Save the fine tuned model after training
 trainer.train()
-
-# Save the model
 trainer.save_model("SpamBERT")
-
-# Optionally, load the model and make predictions
-# model = BertForSequenceClassification.from_pretrained("SpamBERT")
