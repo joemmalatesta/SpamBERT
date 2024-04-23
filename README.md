@@ -19,14 +19,10 @@ This code could be run locally if the `model.safetensors` was included in the Sp
 - All messages are English, with 87% of messages being marked `Ham` (legitimate) and 13% being marked as `Spam`
 
 #### Training
-Starting point
-`{'loss': 0.7044, 'grad_norm': 13.863030433654785, 'learning_rate': 1.0000000000000002e-06, 'epoch': 0.02}`
-Epoch 1
-- `{'eval_loss': 0.049509886652231216, 'eval_accuracy': 0.9919282511210762, 'eval_f1': 0.9706840390879479, 'eval_precision': 0.9933333333333333, 'eval_recall': 0.9490445859872612, 'eval_runtime': 274.153, 'eval_samples_per_second': 4.067, 'eval_steps_per_second': 0.255, 'epoch': 1.0}`
-Epoch 2
-- `{'eval_loss': 0.05400243028998375, 'eval_accuracy': 0.9919282511210762, 'eval_f1': 0.9706840390879479, 'eval_precision': 0.9933333333333333, 'eval_recall': 0.9490445859872612, 'eval_runtime': 275.185, 'eval_samples_per_second': 4.052, 'eval_steps_per_second': 0.254, 'epoch': 2.0}`
-Epoch 3
-`{'loss': 0.0001, 'grad_norm': 0.0022204192355275154, 'learning_rate': 1.7035775127768315e-07, 'epoch': 2.99}` (Didn't record full output, sorry)
+- Starting point `{'loss': 0.7044, 'grad_norm': 13.863030433654785, 'learning_rate': 1.0000000000000002e-06, 'epoch': 0.02}`
+- Epoch 1 `{'eval_loss': 0.049509886652231216, 'eval_accuracy': 0.9919282511210762, 'eval_f1': 0.9706840390879479, 'eval_precision': 0.9933333333333333, 'eval_recall': 0.9490445859872612, 'eval_runtime': 274.153, 'eval_samples_per_second': 4.067, 'eval_steps_per_second': 0.255, 'epoch': 1.0}`
+- Epoch 2 `{'eval_loss': 0.05400243028998375, 'eval_accuracy': 0.9919282511210762, 'eval_f1': 0.9706840390879479, 'eval_precision': 0.9933333333333333, 'eval_recall': 0.9490445859872612, 'eval_runtime': 275.185, 'eval_samples_per_second': 4.052, 'eval_steps_per_second': 0.254, 'epoch': 2.0}`
+- Epoch 3 `{'loss': 0.0001, 'grad_norm': 0.0022204192355275154, 'learning_rate': 1.7035775127768315e-07, 'epoch': 2.99}` (Didn't record full output, sorry)
 
 #### Frameworks
 - Transformers from HuggingFace provided the tooling for Loading the dataset and BERT model, and fine tuning the model. 
